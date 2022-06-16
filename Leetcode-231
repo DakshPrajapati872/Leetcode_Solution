@@ -1,0 +1,24 @@
+class Solution {
+    public boolean isPowerOfTwo(int n) {
+        int c=0;
+       if(n<=0){
+           return false;
+       }
+        else{
+        while(n!=0){
+          
+            if((n&1)==1){
+                c++;
+          }
+            n=n>>1;
+        }
+        if(c>=2){
+        return false;  
+        }
+        else
+            return true;
+        }
+    }
+        
+    
+}
