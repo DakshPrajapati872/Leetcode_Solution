@@ -1,0 +1,25 @@
+class Solution {
+public:
+    void sortColors(vector<int>& arr) {
+        
+        int count = 0,count1=0,i; 
+ 
+    for ( i = 0; i < arr.size(); i++) {
+        if (arr[i] == 0)
+            count++;
+        if(arr[i]==1)
+            count1++;
+    }
+     for (i = 0; i < count; i++)
+        arr[i] = 0;
+ 
+    
+    for (i = count; i < count+count1; i++)
+        arr[i] = 1;
+        
+       for (i = count+count1; i < arr.size(); i++)
+        arr[i] = 2;  
+        
+        
+    }
+};
