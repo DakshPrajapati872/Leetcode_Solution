@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int sum=0;
+    int pro=1;
+    int subtractProductAndSum(int n) {
+        while(n!=0){
+           int digit=n%10;
+            sum=sum+digit;
+            pro=pro*digit;
+            n=n/10;
+           
+        }
+        return pro-sum;
+        
+    }
+};
