@@ -1,0 +1,33 @@
+class Solution {
+public:
+    vector<int> kWeakestRows(vector<vector<int>>& mat, int k) {
+        int i,j;
+        vector<int> v;
+        for(i=0;i<mat.size();i++){
+            int count=0;
+          for(j=0;j<mat[i].size();j++){
+              if(mat[i][j]==1){
+                  count++;
+              }
+          }
+            v.push_back(count);
+        }
+      
+        vector<int> arr(k);
+        for(i = 0; i < k  ; i++){
+            int minCount = 101; // as in question, given that maximum columns are 100 , so count can never increase 100
+            int minIndex = 0;
+            for(j = 0; j <v.size() ; j++){
+                if(v[j] < minCount){
+                    minCount = v[j]; // to find the smallest of all counts of 1's
+                    minIndex = j;
+                }
+            }
+            arr[i]= minIndex; 
+            v[minIndex] = 101; // so that , it is not again considered
+            }
+        return arr;
+        
+        
+    }
+};
